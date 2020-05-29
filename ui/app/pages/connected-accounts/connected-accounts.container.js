@@ -7,6 +7,7 @@ import {
   getSelectedAddress,
 } from '../../selectors'
 import { addPermittedAccount, removePermittedAccount, setSelectedAddress } from '../../store/actions'
+import { getMostRecentOverviewPage } from '../../ducks/history/history'
 
 const mapStateToProps = (state) => {
   const { activeTab } = state
@@ -19,6 +20,7 @@ const mapStateToProps = (state) => {
     accountToConnect,
     activeTabOrigin: activeTab.origin,
     connectedAccounts,
+    mostRecentOverviewPage: getMostRecentOverviewPage(state),
     permissions,
     selectedAddress,
   }
